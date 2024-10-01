@@ -4,7 +4,7 @@ import logo from "../../../public/img/LogoBLCNew2024.png";
 export default function HeaderMain() {
 
   return (
-    <div className="bg-white shadow-lg shadow-gray-500  w-full flex px-6  items-center justify-between p-3 fixed top-0 ">
+    <div className="bg-white shadow-lg shadow-gray-500  w-full flex px-6  items-center justify-between p-3 top-0 ">
       <div>
         <Image src={logo} alt="logo" width={250} height={250} />
       </div>
