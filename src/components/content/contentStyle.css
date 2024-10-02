@@ -1,0 +1,20 @@
+.slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;  /* Đảm bảo mũi tên nằm trên nội dung */
+  }
+  
+.slick-prev {
+    left: 10px;  /* Căn chỉnh mũi tên bên trái */
+    z-index: 10;  /* Đặt mũi tên trên lớp của nội dung */
+  }
+  
+.slick-next {
+    right: 10px;  /* Căn chỉnh mũi tên bên phải */
+    z-index: 10;  /* Đặt mũi tên trên lớp của nội dung */
+  }
+  
+.slick-prev:before, .slick-next:before {
+    font-size: 20px;
+    color: white; /* Màu của mũi tên */
+  }

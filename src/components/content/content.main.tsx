@@ -8,6 +8,30 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 import { Carousel } from "antd";
+import "./contentStyle.css"
+import iconlaptop from "../../../public/img/icon-laptop.webp";
+import iconnews from "../../../public/img/icon-news.webp";
+import iconphone from "../../../public/img/icon-phone.webp";
+import iconsound from "../../../public/img/icon-sound.webp";
+import iconwatch from "../../../public/img/icon-watch.webp";
+import icontablet from "../../../public/img/icon-tablet.webp";
+
+import laptop from "../../../public/img/dnahmuc-laptop.webp";
+import promotion from "../../../public/img/danhmuc-promotion.webp";
+import phone from "../../../public/img/danhmuc-phone.webp";
+import sound from "../../../public/img/danhmuc-sound.webp";
+import watch from "../../../public/img/danhmuc-watch.webp";
+import tablet from "../../../public/img/danhmuc-tablet.webp";
+import Image from "next/image";
+import Banner from "../banner/banner";
+import HotDetail from "../hotdetail/hotdetail";
+import Product from "../product/product";
+
+import banner1 from "../../../public/img/1200x450-sua-airpods-thang-10.jpg";
+import banner2 from "../../../public/img/1200x450-sua-macbook-thang-10.jpg";
+import banner3 from "../../../public/img/1200x450-thay-man-hinh-thang-10.jpg";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+
 const contentStyle: React.CSSProperties = {
   margin: 0,
   height: "300px",
@@ -15,8 +39,31 @@ const contentStyle: React.CSSProperties = {
   lineHeight: "160px",
   textAlign: "center",
   background: "#364d79",
+  objectFit: "fill",
 };
+const imageStyle: React.CSSProperties = {
+  width: "100%",
+  height: "100%",
+};
+const CustomPrevArrow = ({ className, style, onClick }:any) => (
+  <div
+    className={className}
+    style={{ ...style, left: "20px", zIndex: 10, background: "rgba(0,0,0,0.5)", borderRadius: "50%" }}
+    onClick={onClick}
+  >
+    <BiLeftArrow style={{ color: "white", fontSize: "20px" }} />
+  </div>
+);
 
+const CustomNextArrow = ({ className, style, onClick }:any) => (
+  <div
+    className={className}
+    style={{ ...style, right: "20px", zIndex: 10, background: "rgba(0,0,0,0.5)", borderRadius: "50%" }}
+    onClick={onClick}
+  >
+    <BiRightArrow style={{ color: "white", fontSize: "20px" }} />
+  </div>
+);
 export default function MainContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const settings = {
@@ -24,17 +71,33 @@ export default function MainContent() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
   const services = [
-    "Sửa Điện Thoại",
-    "Sửa Tablet",
-    "Sửa Đồng Hồ",
-    "Sửa MacBook",
-    "Sửa Airpords",
-    "Phụ Kiện",
-    "Tin Công Nghệ",
-    "Thu Cũ Đổi Mới",
+    {
+      title: "Sửa Điện Thoại",
+      img: iconphone,
+    },
+    {
+      title: "Sửa Ipad",
+      img: icontablet,
+    },
+    {
+      title: "Sửa Apple Watch",
+      img: iconwatch,
+    },
+    {
+      title: "Sửa Airpod",
+      img: iconsound,
+    },
+    {
+      title: "Sửa Laptop",
+      img: iconlaptop,
+    },
+    {
+      title: "Tin tức",
+      img: iconnews,
+    },
   ];
 
   const features = [
@@ -47,64 +110,6 @@ export default function MainContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      {/* <header className="bg-blue-600 text-white p-4">
-            <div className="container mx-auto flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-                <h1 className="text-2xl font-bold">CareCenter.vn</h1>
-                <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-                <SheetTrigger asChild>
-                    <Button variant="text" className="lg:hidden">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Open menu</span>
-                    </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                    <nav className="flex flex-col space-y-4">
-                    {services.map((service, index) => (
-                        <a key={index} href="#" className="flex items-center space-x-2 text-lg">
-                        <span>{service}</span>
-                        </a>
-                    ))}
-                    </nav>
-                </SheetContent>
-                </Sheet>
-            </div>
-            <div className="hidden lg:flex flex-1 max-w-xl mx-4">
-                <div className="relative w-full">
-                <Input
-                    type="text"
-                    placeholder="Bạn muốn tìm gì..."
-                    className="w-full py-2 px-4 rounded text-black"
-                />
-                <Search className="absolute right-3 top-2.5 text-gray-400" />
-                </div>
-            </div>
-            <div className="hidden lg:flex items-center space-x-4">
-                <Button variant="text" className="flex items-center">
-                <Calendar className="mr-2" />
-                Đặt Lịch
-                </Button>
-                <Button variant="text" className="flex items-center">
-                <ShoppingCart className="mr-2" />
-                <span className="bg-yellow-400 text-blue-600 rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                </Button>
-            </div>
-            </div>
-        </header> */}
-
-      {/* Service Icons */}
-      {/* <div className="bg-white py-4 overflow-x-auto">
-        <div className="container mx-auto flex justify-between min-w-max px-4">
-          {['Dịch Vụ Uy Tín', 'Bảo Mật Dữ Liệu', 'Chất Lượng Hàng Đầu', 'Nhanh Chóng - Lấy Liền', 'Hotline: 1900 8174'].map((item, index) => (
-            <div key={index} className="flex items-center mx-2">
-              <div className="w-6 h-6 bg-gray-300 rounded-full mr-2"></div>
-              <span className="text-sm">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div> */}
-
       {/* Main Content */}
       <main className="container mx-auto mt-8 px-4 lg:flex">
         {/* Sidebar - Hidden on mobile, shown on larger screens */}
@@ -113,13 +118,14 @@ export default function MainContent() {
           <ul className="space-y-2">
             {services.map((service, index) => (
               <li key={index} className="flex items-center">
-                <div className="w-6 h-6 bg-gray-300 rounded-full mr-2"></div>
-                <span>{service}</span>
+                <div className="w-6 h-6 rounded-full mr-2">
+                  <Image src={service.img} alt={service.title} />
+                </div>
+                <span>{service.title}</span>
               </li>
             ))}
           </ul>
         </aside>
-
         {/* Main Banner */}
         <div className="lg:w-3/4">
           <div className="bg-blue-600 text-white  rounded-lg relative overflow-hidden">
@@ -131,18 +137,47 @@ export default function MainContent() {
               </Button>
             </div>
             <div className="absolute right-0 bottom-0 w-1/2 h-1/2 bg-gray-300 rounded-tl-full"></div> */}
-            <Carousel dots infinite>
+            <Carousel
+              dots
+              arrows
+              infinite
+              autoplay
+              draggable
+              // prevArrow={<CustomPrevArrow />} // Sử dụng custom prev arrow
+              // nextArrow={<CustomNextArrow />}
+            >
               <div>
-                <h3 style={contentStyle}>1</h3>
+                <h3 style={contentStyle}>
+                  <Image
+                    style={imageStyle}
+                    src={banner1}
+                    alt="banner 1"
+                    height={1000}
+                    width={2000}
+                  />
+                </h3>
               </div>
               <div>
-                <h3 style={contentStyle}>2</h3>
+                <h3 style={contentStyle}>
+                  <Image
+                    style={imageStyle}
+                    src={banner2}
+                    alt="banner 2"
+                    height={1000}
+                    width={2000}
+                  />
+                </h3>
               </div>
               <div>
-                <h3 style={contentStyle}>3</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>4</h3>
+                <h3 style={contentStyle}>
+                  <Image
+                    style={imageStyle}
+                    src={banner3}
+                    alt="banner 3"
+                    height={1000}
+                    width={2000}
+                  />
+                </h3>
               </div>
             </Carousel>
           </div>
@@ -151,20 +186,38 @@ export default function MainContent() {
 
       {/* Product Categories */}
       <div className="container mx-auto mt-12 px-4">
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-6 gap-4">
           {[
-            "Sửa Điện Thoại",
-            "Sửa Tablet",
-            "Sửa Đồng Hồ",
-            "Sửa Airpods",
-            "Sửa Macbook",
-            "Phụ Kiện Chính Hãng",
-            "Thu Cũ Đổi Mới",
-            "Khuyến Mãi Hot",
+            {
+              title: "Sửa Điện Thoại",
+              img: phone,
+            },
+            {
+              title: "Sửa Ipad",
+              img: tablet,
+            },
+            {
+              title: "Sửa Apple Watch",
+              img: watch,
+            },
+            {
+              title: "Sửa Airpod",
+              img: sound,
+            },
+            {
+              title: "Sửa Laptop",
+              img: laptop,
+            },
+            {
+              title: "Khuyến mãi",
+              img: promotion,
+            },
           ].map((category, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-gray-300 rounded-full mb-2"></div>
-              <span className="text-center text-sm">{category}</span>
+              <div className="w-16 h-16 flex justify-center items-center bg-gray-300 rounded-full mb-2">
+                <Image src={category.img} alt={category.title} />
+              </div>
+              <span className="text-center text-sm">{category.title}</span>
             </div>
           ))}
         </div>
@@ -185,6 +238,13 @@ export default function MainContent() {
           ))}
         </div>
       </div>
+      <Banner />
+      <HotDetail />
+      <Product title={"Sửa điện thoại"} />
+      <Product title={"Sửa Apple Watch"} />
+      <Product title={"Sửa Ipad"} />
+      <Product title={"Sửa Airpods"} />
+      <Product title={"Sửa Laptop"} />
     </div>
   );
 }
