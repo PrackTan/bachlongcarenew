@@ -15,6 +15,7 @@ import iconphone from "../../../public/img/icon-phone.webp";
 import iconsound from "../../../public/img/icon-sound.webp";
 import iconwatch from "../../../public/img/icon-watch.webp";
 import icontablet from "../../../public/img/icon-tablet.webp";
+import icontradein from "../../../public/img/1720597439116-thu-cu-len-doi.webp"
 
 import laptop from "../../../public/img/dnahmuc-laptop.webp";
 import promotion from "../../../public/img/danhmuc-promotion.webp";
@@ -166,6 +167,10 @@ export default function MainContent() {
       title: "Tin tức",
       img: iconnews,
     },
+    {
+      title:"Thu cũ đổi mới",
+      img:icontradein
+    }
   ];
 
   const features = [
