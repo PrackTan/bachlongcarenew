@@ -33,13 +33,13 @@ export default function HeaderMain() {
           <input
             type="text"
             placeholder="Bạn muốn tìm gì ..."
-            className="w-full py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-200 py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         {/* Schedule and Cart Icons */}
         <div className="flex items-center space-x-4">
           {/* Schedule Icon */}
-          <button className="flex items-center space-x-2 hover:t">
+          <button className="flex items-center space-x-2 hover:text-[#fad200] text-white bg-[#003c77] p-3 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

@@ -30,8 +30,76 @@ import Product from "../product/product";
 import banner1 from "../../../public/img/1200x450-sua-airpods-thang-10.jpg";
 import banner2 from "../../../public/img/1200x450-sua-macbook-thang-10.jpg";
 import banner3 from "../../../public/img/1200x450-thay-man-hinh-thang-10.jpg";
+
+import phone1 from "../../../public/img/pin-orizin-ip-13-13-pro-moi-hinh-nhat-2024.jpg";
+import phone2 from "../../../public/img/pin-orizin-maximum-iphone-11-pro-max-2024-768x768 (1).png";
+import phone3 from "../../../public/img/pin-orizin-maximum-iphone-11-pro-max-2024-768x768.png";
+import phone4 from "../../../public/img/pin-orizin-maximum-iphone-11-pro-2024-768x768.png";
+import phone5 from "../../../public/img/pin-orizin-maximum-iphone-12-pro-max-2024-768x768.png";
+import appleWatchPin1 from "../../../public/img/apple-watch-s4-kinh.jpg";
+import appleWatchPin2 from "../../../public/img/apple-watch-s5-kinh.jpg";
+import appleWatchPin3 from "../../../public/img/apple-watch-s6-kinh.jpg";
+import appleWatchPin4 from "../../../public/img/apple-watch-s7-kinh.jpg";
+import appleWatchPin5 from "../../../public/img/apple-watch-se-kinh.jpg";
+import ipad from "../../../public/img/pin-orizin-ipad-11-gen-2-768x768.png";
+import ipad2 from "../../../public/img/pin-orizin-ipad-11-gen-3-768x768.png";
+import ipad3 from "../../../public/img/pin-orizin-ipad-12-9-gen-2-768x768.png";
+import ipad4 from "../../../public/img/pin-orizin-ipad-12-9-gen-3-768x768.png";
+import ipad5 from "../../../public/img/pin-orizin-ipad-air-10-9-768x768.png";
+import laptop1 from "../../../public/img/laptop-ASUS-Zen-Book-UX430.jpg";
+import laptop2  from "../../../public/img/laptop-ASUS-Zen-Book-UX430.jpg";
+import laptop3  from "../../../public/img/laptop-Dell-Vostro-3458.jpg";
+import laptop4  from "../../../public/img/laptop-HP-Envy-14-AL.jpg";
+import laptop5  from "../../../public/img/laptop-Lenovo-ThinkPad-T420S.jpg";
+
+
+
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
+
+
+
+const products = {
+    phone: [
+      { 
+        name: 'iPhone 13 Pro Battery', 
+        price: '1.100.000đ',
+        img: phone1
+      },
+      { name: 'iPhone 12 Screen', price: '1.200.000đ', img: phone2 },
+      { name: 'Samsung S21 Camera', price: '900.000đ', img: phone3 },
+      { name: 'Google Pixel 6 Charging Port', price: '800.000đ', img: phone4 },
+      { name: 'OnePlus 9 Battery', price: '950.000đ', img: phone5 },
+      { name: 'Xiaomi Mi 11 Screen', price: '1.050.000đ', img: phone1 },
+    ],
+    airpods: [
+      { name: 'AirPods Pro 2nd Gen Case', price: '800.000đ', img: sound },
+      { name: 'AirPods 3rd Gen Battery', price: '600.000đ', img: sound },
+      { name: 'AirPods Max Ear Cushions', price: '1.200.000đ', img: sound },
+      { name: 'AirPods 2nd Gen Charging Case', price: '500.000đ', img: sound },
+    ],
+    ipad: [
+      { name: 'iPad Pro 12.9" Screen', price: '3.500.000đ', img: ipad },
+      { name: 'iPad Air 4 Battery', price: '1.800.000đ', img: ipad2 },
+      { name: 'iPad Mini 6 Charging Port', price: '900.000đ', img: ipad3 },
+      { name: 'iPad 8th Gen Home Button', price: '700.000đ', img: ipad4 },
+      { name: 'iPad 9th Gen Screen', price: '2.200.000đ', img: ipad5 },
+    ],
+    laptop: [
+      { name: 'MacBook Pro 16" Battery', price: '2.500.000đ', img: laptop1 },
+      { name: 'MacBook Air M1 Screen', price: '4.000.000đ', img: laptop2 },
+      { name: 'MacBook Pro 13" Keyboard', price: '1.800.000đ', img: laptop3 },
+      { name: 'MacBook Air M2 Trackpad', price: '1.500.000đ', img: laptop4 },
+      { name: 'MacBook Pro 14" Display', price: '5.000.000đ', img: laptop5 },
+    ],
+    appleWatch: [
+      { name: 'Apple Watch Series 7 Screen', price: '2.000.000đ', img: appleWatchPin1 },
+      { name: 'Apple Watch SE Battery', price: '800.000đ', img: appleWatchPin2 },
+      { name: 'Apple Watch Series 6 Crown', price: '600.000đ', img: appleWatchPin3 },
+      { name: 'Apple Watch Series 5 Strap', price: '400.000đ', img: appleWatchPin4 },
+      { name: 'Apple Watch Series 4 Sensor', price: '1.000.000đ', img: appleWatchPin5 },
+    ],
+}
 const contentStyle: React.CSSProperties = {
   margin: 0,
   height: "300px",
@@ -79,7 +147,7 @@ export default function MainContent() {
       img: iconphone,
     },
     {
-      title: "Sửa Ipad",
+      title: "Sửa iPad",
       img: icontablet,
     },
     {
@@ -111,9 +179,9 @@ export default function MainContent() {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
-      <main className="container mx-auto mt-8 px-4 lg:flex">
+      <main className="container mx-auto mt-8 px-4 lg:flex justify-evenly ">
         {/* Sidebar - Hidden on mobile, shown on larger screens */}
-        <aside className="hidden lg:block lg:w-1/4 pr-8">
+        <aside className="hidden lg:block pr-8 bg-[gainsboro] p-5 rounded">
           <h2 className="font-bold text-lg mb-4">Danh mục dịch vụ</h2>
           <ul className="space-y-2">
             {services.map((service, index) => (
@@ -193,7 +261,7 @@ export default function MainContent() {
               img: phone,
             },
             {
-              title: "Sửa Ipad",
+              title: "Sửa iPad",
               img: tablet,
             },
             {
@@ -201,7 +269,7 @@ export default function MainContent() {
               img: watch,
             },
             {
-              title: "Sửa Airpod",
+              title: "Sửa AirPods",
               img: sound,
             },
             {
@@ -239,12 +307,12 @@ export default function MainContent() {
         </div>
       </div>
       <Banner />
-      <HotDetail />
-      <Product title={"Sửa điện thoại"} />
-      <Product title={"Sửa Apple Watch"} />
-      <Product title={"Sửa Ipad"} />
-      <Product title={"Sửa Airpods"} />
-      <Product title={"Sửa Laptop"} />
+      <HotDetail/>
+      <Product title="Sửa điện thoại" products={products.phone} />
+      <Product title="Sửa Apple Watch" products={products.appleWatch} />
+      <Product title="Sửa iPad" products={products.ipad} />
+      {/* <Product title="Sửa AirPods" products={products.airpods} /> */}
+      <Product title="Sửa Laptop" products={products.laptop} />
     </div>
   );
 }
